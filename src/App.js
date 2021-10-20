@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Footer from './components/Footer';
+import NavBar from './components/Navbar';
+import Home from './pages/Home';
+import About from './pages/About';
+import Project from './pages/Project';
+import { GithubState } from './context/gitHub/GithubState';
 
 function App() {
+  const [footer] = useState({
+    telegram: 'https://t.me/sergunder',
+    github: 'https://github.com/NazarovCC',
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GithubState>
+      <BrowserRouter>
+        <div className="container">
+          <NavBar />
+          <h1>Резюме</h1>
+          <Switch>
+            <Route path="/" exact component={Home}></Route>
+            <Route path="/about" exact component={About}></Route>
+            <Route path="/project" exact component={Project}></Route>
+          </Switch>
+          <Footer telegram={footer.telegram} github={footer.github} />
+        </div>
+      </BrowserRouter>
+    </GithubState>
   );
 }
 
