@@ -12,6 +12,7 @@ body {
 nav {
   max-width: 100%;
   background-color: #f5b642;
+  position: relative;
 }
 .descrip {
   text-align: left;
@@ -99,3 +100,30 @@ h4.project_name {
   color: #ecf542;
   text-decoration: underline overline #f59042;
 }
+
+/*navbar and sidebar*/
+.breakpoint__medium-down {
+  margin-left: 20px;
+}
+.genre-component {
+  width: 250px;
+  position: absolute;
+  top: 65px;
+  font-size: 1.5rem;
+  z-index: 20;
+}
+.genre-component ul {
+  list-style: none;
+  padding: 10px;
+}
+.sidebar-link {
+  background-color: #c0a425;
+}
+.sidebar-link:hover {
+  background-color: #4254f5;
+}
+.sidebar_text {
+  color: white;
+  text-decoration: none;
+}
+

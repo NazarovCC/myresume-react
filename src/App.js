@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BreakpointProvider } from 'react-socks';
 import Footer from './components/Footer';
 import NavBar from './components/Navbar';
 import Home from './pages/Home';
@@ -13,10 +14,13 @@ function App() {
     github: 'https://github.com/NazarovCC',
   });
   return (
+
     <GithubState>
       <BrowserRouter>
         <div className="container">
+        <BreakpointProvider>
           <NavBar />
+          </BreakpointProvider>
           <h1>Резюме</h1>
           <Switch>
             <Route path="/" exact component={Home}></Route>
@@ -27,6 +31,7 @@ function App() {
         </div>
       </BrowserRouter>
     </GithubState>
+
   );
 }
 
