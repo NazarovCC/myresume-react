@@ -8,14 +8,18 @@ const Footer = ({ telegram, github }) => {
           src="https://img.icons8.com/ios-glyphs/30/000000/telegram-app.png"
           alt="telegram"
         />
-        <a href={telegram}>{telegram}</a>
+        <a href={telegram} target="_blank" rel="noreferrer">
+          {telegram}
+        </a>
       </div>
       <div className="footer_block">
         <img
           src="https://img.icons8.com/ios-glyphs/30/000000/github.png"
           alt="github"
         />
-        <a href={github}>{github}</a>
+        <a href={github} target="_blank" rel="noreferrer">
+          {github}
+        </a>
       </div>
     </div>
   );

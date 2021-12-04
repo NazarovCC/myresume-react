@@ -8,6 +8,7 @@ body {
   display: block;
   box-sizing: border-box;
   text-align: center;
+  overflow: none;
 }
 nav {
   max-width: 100%;
@@ -21,6 +22,7 @@ nav {
 .container {
   padding: 0;
   max-width: 1200px;
+  min-height: 500px;
   margin: 0 auto;
   border: 2px solid blanchedalmond;
   border-radius: 5px;
@@ -127,3 +129,69 @@ h4.project_name {
   text-decoration: none;
 }
 
+.back-container {
+  background: #f59042;
+}
+
+.slider-container {
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+}
+.slider-container-mobile {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+.slide {
+  height: 80vh;
+  border-radius: 20px;
+  margin: 10px;
+  cursor: pointer;
+  color: white;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 600ms ease-out;
+}
+
+.slide h3 {
+  display: none;
+  position: absolute;
+  font-size: 40px;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+  color: #f59042;
+}
+.slide.active {
+  flex: 15;
+  /* background-size: cover; */
+}
+.slide.active h3 {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.45s ease-in 0.3s;
+}
+
+.info-modal {
+  padding: 20px;
+}
+.info-modal-header {
+  display: flex;
+}
+.info-modal-header > .close-icon {
+  cursor: pointer;
+}
+.info-modal-picture {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 200px;
+  margin-bottom: 10px;
+}

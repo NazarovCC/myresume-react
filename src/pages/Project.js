@@ -1,5 +1,6 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import { GithubContext } from '../context/gitHub/githubContext';
+import Slider from '../components/Slider';
 
 const Project = () => {
   const { reposVue, getRepos, loading } = useContext(GithubContext);
@@ -20,16 +21,7 @@ const Project = () => {
           </div>
         </div>
       ) : (
-        <div className="card">
-          <ul className="list-group">
-            {reposVue.map((r) => (
-              <li key={r.id} className="list-group-item list-group-item-action">
-                <h4 className="project_name">{r.name}</h4>
-                <a href={r.html_url}>{r.html_url}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <Slider reposVue={reposVue} />
       )}
     </Fragment>
   );

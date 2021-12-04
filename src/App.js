@@ -14,24 +14,24 @@ function App() {
     github: 'https://github.com/NazarovCC',
   });
   return (
-
     <GithubState>
       <BrowserRouter>
         <div className="container">
-        <BreakpointProvider>
-          <NavBar />
+          <BreakpointProvider>
+            <NavBar />
           </BreakpointProvider>
           <h1>Резюме</h1>
           <Switch>
             <Route path="/" exact component={Home}></Route>
             <Route path="/about" exact component={About}></Route>
-            <Route path="/project" exact component={Project}></Route>
+            <BreakpointProvider>
+              <Route path="/project" exact component={Project}></Route>
+            </BreakpointProvider>
           </Switch>
           <Footer telegram={footer.telegram} github={footer.github} />
         </div>
       </BrowserRouter>
     </GithubState>
-
   );
 }
 
